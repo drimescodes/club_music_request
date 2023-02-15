@@ -1,0 +1,171 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  main {
+    #main {
+      padding: 2vw;
+      .links {
+        padding: 3vw;
+        width: 100%;
+        * {
+          display: block;
+          margin: 1.5rem auto;
+          width: fit-content;
+          font-family: $main;
+          transition: 0.5s all;
+        }
+        button {
+          background-color: transparent;
+          padding: 0.8rem 1.6rem;
+          border: 1px solid white;
+          outline: 1px solid white;
+          outline-offset: 5px;
+          &:hover {
+            border-color: black;
+            outline-color: black;
+            color: black;
+            background-color: white;
+          }
+        }
+        a:hover {
+          color: rgba(255, 255, 255, 0.712);
+        }
+      }
+    }
+    #guest {
+      position: fixed;
+      inset: 0 0 100%;
+      top: -100%;
+      transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      &.open {
+        inset: 0;
+      }
+      .inner {
+        position: relative;
+        background-color: black;
+        width: 50%;
+        min-width: 350px;
+        height: 60%;
+        padding: 5vw;
+        border-style: solid;
+        border-width: 2px 2px 15px 15px;
+        border-image-slice: 2 2 15 15; /* same as border-width*/
+        border-image-source: linear-gradient(
+          -45deg,
+          transparent 9px,
+          white 0 calc(100% - 9px),
+          transparent 0
+        );
+        svg {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          transition: all 0.3s;
+          &:hover {
+            width: 25px;
+            height: 25px;
+            top: calc(1rem - 3px);
+            right: calc(1rem - 3px);
+          }
+        }
+        form {
+          width: 70%;
+          * {
+            display: block;
+            margin: 2rem auto;
+          }
+          input {
+            padding: 0.5rem;
+            background-color: transparent;
+            border: 1px solid white;
+            width: 100%;
+            &::placeholder {
+              color: rgba(255, 255, 255, 0.76);
+            }
+          }
+          button {
+            background-color: transparent;
+            padding: 0.8rem 1.6rem;
+            border: 1px solid white;
+            outline: 1px solid white;
+            outline-offset: 5px;
+            transition: all 0.5s;
+            font-family: $main;
+            &:hover {
+              border-color: black;
+              outline-color: black;
+              color: black;
+              background-color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// media query
+@media screen and (max-width: 500px) {
+  body main {
+    #main {
+      h1 {
+        font-size: 4rem;
+      }
+      .links {
+        button {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  body main {
+    #main {
+      h1 {
+        font-size: 3.7rem;
+      }
+      .links {
+        button {
+          font-size: 0.9rem;
+        }
+        a {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    #guest .inner{
+        min-width: 95%;
+        h2{
+            font-size: 2.3rem;
+        }
+        form button {
+          font-size: 1rem;
+          padding: 0.6rem 1.2rem;
+        }
+    }
+  }
+}
+@media screen and (max-width: 300px) {
+  body main {
+    #main {
+      h1 {
+        font-size: 3rem;
+      }
+      .links {
+        button {
+          font-size: 0.9rem;
+          padding: 0.6rem 1.2rem;
+        }
+        a {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
