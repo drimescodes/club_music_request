@@ -1,4 +1,4 @@
-import NotFound from './components/NotFound.js'
+import NotFound from './components/NotFound'
 import Home from './pages/Home'
 
 import {
@@ -6,17 +6,19 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import './App.scss';
+import './App.css';
 
 function App() {
   return (
     <>
+      <Nav />
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path='*' element={<NotFound />}/>
         </Routes>
       </Router>
+      <Footer />
     </>
   )
 }
