@@ -5,7 +5,8 @@ body {
   align-items: center;
   main {
     #main {
-      padding: 5vw;
+      padding: 2vw;
+      //   min
       h1 {
         font-size: 5rem;
       }
@@ -40,7 +41,7 @@ body {
     #guest {
       position: fixed;
       inset: 0 0 100%;
-      top: -100%;   
+      top: -100%;
       transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
       &.open {
         inset: 0;
@@ -49,6 +50,7 @@ body {
         position: relative;
         background-color: black;
         width: 50%;
+        min-width: 350px;
         height: 60%;
         padding: 5vw;
         border-style: solid;
@@ -79,7 +81,7 @@ body {
           width: 70%;
           * {
             display: block;
-            margin: 1.5rem auto;
+            margin: 2rem auto;
           }
           input {
             padding: 0.5rem;
@@ -105,6 +107,67 @@ body {
               background-color: white;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+// media query
+@media screen and (max-width: 500px) {
+  body main {
+    #main {
+      h1 {
+        font-size: 4rem;
+      }
+      .links {
+        button {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  body main {
+    #main {
+      h1 {
+        font-size: 3.7rem;
+      }
+      .links {
+        button {
+          font-size: 0.9rem;
+        }
+        a {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    #guest .inner{
+        min-width: 95%;
+        h2{
+            font-size: 2.3rem;
+        }
+        form button {
+          font-size: 1rem;
+          padding: 0.6rem 1.2rem;
+        }
+    }
+  }
+}
+@media screen and (max-width: 300px) {
+  body main {
+    #main {
+      h1 {
+        font-size: 3rem;
+      }
+      .links {
+        button {
+          font-size: 0.9rem;
+          padding: 0.6rem 1.2rem;
+        }
+        a {
+          font-size: 0.8rem;
         }
       }
     }
