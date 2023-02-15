@@ -39,15 +39,11 @@ body {
     }
     #guest {
       position: fixed;
-      //   z-index: -2;
       inset: 0 0 100%;
       top: -100%;   
-      //   visibility: hidden;
       transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
       &.open {
         inset: 0;
-        // z-index: 5;
-        // visibility: visible;
       }
       .inner {
         position: relative;
@@ -101,6 +97,7 @@ body {
             outline: 1px solid white;
             outline-offset: 5px;
             transition: all 0.5s;
+            font-family: $main;
             &:hover {
               border-color: black;
               outline-color: black;
